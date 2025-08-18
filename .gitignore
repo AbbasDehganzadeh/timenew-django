@@ -1,0 +1,11 @@
+## virtuals
+.env
+venv
+env
+
+## python
+__pycache__
+
+## database
+db.sqlite3
+
