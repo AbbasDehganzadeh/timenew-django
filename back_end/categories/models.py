@@ -1,19 +1,23 @@
 from django.db import models
 
+from main.models import BaseContentModel
 from accounts.models import UserModel
 
-class CategoryModel(models.Model):
-    followings = models.ManyToManyField(UserModel, related_name='category_following', db_table='followings')
-    # slug
-    # title: META
-    # excerpt: META
-    # header: CONTENT
-    # description: CONTENT
-    # created_at
-    # updated_at
-    # priority
 
-#! TagClass should be in a model or not
-class TagModel(models.Model):
-    pass
-    # name
+class ContentStatus(models.TextChoices):
+    DRAFT = "F", "پیش نویس"
+    SUBMITTED = "S", "ثبت شده"
+    APPROVED = "A", "تایید شده"
+    PUBLISHED = "P", "منتشر شده"
+    ARCHIVED = "C", "آرشیو"
+
+
+class CategoryModel(BaseContentModel):
+    followings = models.ManyToManyField(
+        UserModel,
+        related_name="category_followings",
+        related_query_name="following",
+        db_table="followings",
+    )
+    header = models.CharField(max_length=100, verbose_name="عنوان")
+    description = models.TextField(max_length=8000, verbose_name="توضیحات", blank=True)
