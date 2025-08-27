@@ -67,6 +67,8 @@ class ContributorModel(BaseModel):
         on_delete=models.CASCADE,
     )
     date_contrib = models.DateTimeField(
-        verbose_name="تاریخ مشارکت", blank=True, null=True,
+        verbose_name="تاریخ مشارکت",
+        blank=True,
+        null=True,
     )
     is_approved = models.BooleanField(default=False, verbose_name="تایید شده")

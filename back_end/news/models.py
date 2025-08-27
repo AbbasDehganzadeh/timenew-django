@@ -9,6 +9,7 @@ class TagModel(BaseContentModel):
     name = models.CharField(max_length=10, verbose_name="نشانک", unique=True)
     hyped = models.BooleanField(verbose_name="بخار شده", default=False)
 
+
 class NewsModel(BaseContentModel):
     header = models.CharField(max_length=100, verbose_name="عنوان")
     text = models.TextField(max_length=2000, verbose_name="متن خبر", blank=True)

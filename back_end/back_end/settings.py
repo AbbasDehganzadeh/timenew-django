@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "main",
     "accounts",
     "categories",
@@ -84,7 +83,7 @@ DATABASES = {
 }
 
 
-AUTH_USER_MODEL = 'accounts.UserModel'
+AUTH_USER_MODEL = "accounts.UserModel"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
